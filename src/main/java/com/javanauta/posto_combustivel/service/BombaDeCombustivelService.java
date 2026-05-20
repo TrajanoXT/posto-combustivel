@@ -22,7 +22,7 @@ public class BombaDeCombustivelService {
             new NullPointerException("Bomba de Combustivel nao encontrada pelo id"+id));
     }
 
-    public List<BombasDeCombustivel> buscarBombasDeCombustivelPorNome() {
+    public List<BombasDeCombustivel> buscarBombasDeCombustivel() {
         return bombaDeCombustivelRepository.findAll();
     }
     @Transactional

@@ -18,18 +18,18 @@ public class TiposDeCombustivelService {
         tipoDeCombustivelRepository.save(tipoDeCombustivel);
     }
 
-    private TiposDeCombustivel buscarTiposDeCombustivelPorID(Integer id) {
+    public TiposDeCombustivel buscarTiposDeCombustivelPorID(Integer id) {
         return tipoDeCombustivelRepository.findById(id).orElseThrow(() ->
                 new NullPointerException("Tipo de combustivel nao encontrado pelo id -> "+id));
     }
-    private List<TiposDeCombustivel> buscarTiposDeCombustivel(){
+    public List<TiposDeCombustivel> buscarTiposDeCombustivel(){
         return tipoDeCombustivelRepository.findAll();
     }
     @Transactional
-    private void deletarTipoDeCombustivel(Integer id){
+    public void deletarTipoDeCombustivel(Integer id){
         tipoDeCombustivelRepository.deleteById(id);
     }
-    private void alterarTipoDeCombustivel(Integer id, TiposDeCombustivel tipoDeCombustivel) {
+    public void alterarTipoDeCombustivel(Integer id, TiposDeCombustivel tipoDeCombustivel) {
         TiposDeCombustivel combustivel = buscarTiposDeCombustivelPorID(id);
         tipoDeCombustivel.setId(combustivel.getId());
         tipoDeCombustivelRepository.save(tipoDeCombustivel);
